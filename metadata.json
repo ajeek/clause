@@ -1,0 +1,6 @@
+{
+  "name": "Clause Protocol UI",
+  "description": "Frontend preview for the Clause protocol, demonstrating immutable source-bound conditions, canonical states, and evaluation history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
