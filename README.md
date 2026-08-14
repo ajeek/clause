@@ -29,6 +29,7 @@ Clause is built around a simple idea:
 
 **Explorer:** 
 https://explorer-studio.genlayer.com/address/0x48606F48103de51ecfdCa4485dbC3c790f380551
+
 https://explorer-studio.genlayer.com/tx/0x5f8faded9ac9f9e726ba88ef5aba101477d0d5525d81ca8562a6b665827cd85e
 
 ---
@@ -59,6 +60,9 @@ Source:
 https://www.arc.io/
 
 ![Clause Protocol Screenshot](./public/screenshot.png)
+
+<img width="1137" height="583" alt="screenshot" src="https://github.com/user-attachments/assets/980a8b2b-da4d-4339-adeb-a8c622e910d6" />
+
 
 ```
 
