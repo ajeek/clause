@@ -4,7 +4,7 @@ import { Clause, TransactionState } from './types';
 import { ClauseCard } from './components/ClauseCard';
 import { ClauseDetail } from './components/ClauseDetail';
 import { CreateClauseForm } from './components/CreateClauseForm';
-import { Plus, Wallet, AlertTriangle } from 'lucide-react';
+import { Plus, Wallet, AlertTriangle, Copy, LogOut, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { getReadClient, getWriteClient } from './genlayer';
 import { studionet } from 'genlayer-js/chains';
@@ -34,6 +34,7 @@ export default function App() {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [totalClauses, setTotalClauses] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const ITEMS_PER_PAGE = 10;
 
@@ -407,9 +408,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] font-sans selection:bg-slate-200">
+    <div className="min-h-screen bg-[#FAFAFA] font-sans selection:bg-slate-200 flex flex-col">
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="w-full px-6 h-16 flex items-center justify-between">
           <button 
             onClick={() => { setView('list'); setSelectedClauseId(null); }}
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity text-left"
@@ -443,9 +444,33 @@ export default function App() {
 
             {address ? (
               <div className="flex items-center space-x-2">
-                <span className="text-sm font-mono bg-slate-100 text-slate-600 px-3 py-1.5 rounded-md">
-                  {address.slice(0, 6)}...{address.slice(-4)}
-                </span>
+                <div className="relative group">
+                  <button className="text-sm font-mono bg-slate-100 text-slate-600 px-3 py-1.5 rounded-md hover:bg-slate-200 transition-colors flex items-center space-x-2">
+                    <span>{address.slice(0, 6)}...{address.slice(-4)}</span>
+                  </button>
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-slate-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="p-1">
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(address);
+                          setCopied(true);
+                          setTimeout(() => setCopied(false), 2000);
+                        }}
+                        className="w-full text-left px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 rounded-md flex items-center space-x-2"
+                      >
+                        {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                        <span>{copied ? 'Copied!' : 'Copy Address'}</span>
+                      </button>
+                      <button
+                        onClick={() => setAddress(null)}
+                        className="w-full text-left px-3 py-2 text-sm text-rose-600 hover:bg-rose-50 rounded-md flex items-center space-x-2"
+                      >
+                        <LogOut className="w-4 h-4" />
+                        <span>Disconnect</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 {isWrongNetwork && (
                   <button onClick={switchNetwork} className="text-xs bg-rose-100 text-rose-700 px-3 py-1.5 rounded-md hover:bg-rose-200 font-medium transition-colors flex items-center space-x-1">
                     <AlertTriangle className="w-3 h-3" />
@@ -469,7 +494,7 @@ export default function App() {
         </div>
       )}
 
-      <main className="max-w-5xl mx-auto px-6 py-12">
+      <main className="max-w-5xl mx-auto px-6 py-12 flex-1 w-full">
         <AnimatePresence mode="wait">
           {view === 'list' && (
             <motion.div
@@ -559,6 +584,12 @@ export default function App() {
           )}
         </AnimatePresence>
       </main>
+
+      <footer className="w-full px-6 py-6 mt-auto">
+        <p className="text-sm text-slate-500">
+          built by <a href="https://www.x.com/idnurey" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-700 hover:text-slate-900 transition-colors">Archers</a>
+        </p>
+      </footer>
     </div>
   );
 }

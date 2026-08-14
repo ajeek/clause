@@ -21,13 +21,15 @@ Clause is built around a simple idea:
 
 ## Live Application
 
-**Live App:** [add deployed Clause URL]
+**Live App:** https://clause-alpha.vercel.app/
 
-**Repository:** [add GitHub repository URL]
+**Repository:** https://github.com/ajeek/clause
 
-**Contract:** [add deployed contract address]
+**Contract:** 0x48606F48103de51ecfdCa4485dbC3c790f380551
 
-**Explorer:** [add GenLayer Explorer contract/transaction URL]
+**Explorer:** 
+https://explorer-studio.genlayer.com/address/0x48606F48103de51ecfdCa4485dbC3c790f380551
+https://explorer-studio.genlayer.com/tx/0x5f8faded9ac9f9e726ba88ef5aba101477d0d5525d81ca8562a6b665827cd85e
 
 ---
 
@@ -51,10 +53,13 @@ For example:
 
 ```text
 Condition:
-Spain won the 2026 World Cup.
+Arc uses USDC as its native gas token
 
 Source:
-https://www.goal.com/en-ng/...
+https://www.arc.io/
+
+![Clause Protocol Screenshot](./public/screenshot.png)
+
 ```
 
 The condition is stored by the Clause contract.
