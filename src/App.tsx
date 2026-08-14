@@ -412,12 +412,18 @@ export default function App() {
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <button 
             onClick={() => { setView('list'); setSelectedClauseId(null); }}
-            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity text-left"
           >
-            <div className="w-8 h-8 bg-slate-900 text-white flex items-center justify-center rounded font-serif font-bold text-lg">
-              C
+            <div className="w-11 h-11 bg-[#0A0F1C] flex items-center justify-center rounded-[0.6rem] shrink-0">
+              <svg viewBox="0 0 32 32" className="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 23 8 L 12 8 C 9.79 8 8 9.79 8 12 L 8 20 C 8 22.21 9.79 24 12 24 L 23 24" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M 11 16 L 23 16" stroke="#5B64E9" strokeWidth="3" strokeLinecap="round" fill="none" />
+              </svg>
             </div>
-            <span className="font-semibold text-slate-900 tracking-tight">Clause Protocol</span>
+            <div className="flex flex-col justify-center">
+              <span className="font-serif font-bold text-2xl text-[#0A0F1C] leading-none tracking-tight">Clause Protocol</span>
+              <span className="text-[0.6rem] font-bold text-[#5B64E9] tracking-[0.15em] mt-1 uppercase leading-none">Conditions. Sources. Verified.</span>
+            </div>
           </button>
           
           <div className="flex items-center space-x-4">
