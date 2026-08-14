@@ -61,9 +61,6 @@ https://www.arc.io/
 
 ![Clause Protocol Screenshot](./public/screenshot.png)
 
-<img width="1137" height="583" alt="screenshot" src="https://github.com/user-attachments/assets/980a8b2b-da4d-4339-adeb-a8c622e910d6" />
-
-
 ```
 
 The condition is stored by the Clause contract.
@@ -81,7 +78,7 @@ Clause requires information that does not originate on the blockchain.
 A conventional smart contract can maintain the condition:
 
 ```text
-"Spain won the 2026 World Cup."
+"Arc uses USDC as its native gas token."
 ```
 
 but it cannot independently inspect a public web source and determine whether the available information supports that statement.
@@ -152,13 +149,13 @@ The same Clause can be evaluated again when the external information may have ch
 ### Condition
 
 ```text
-Spain won the 2026 World Cup.
+Arc uses USDC as its native gas token.
 ```
 
 ### Source
 
 ```text
-https://www.goal.com/en-ng/lists/lamine-yamal-19th-birthday-barcelona-training-world-cup-glory/...
+https://www.arc.io/
 ```
 
 ### Result
@@ -392,17 +389,17 @@ For example:
 
 ```text
 Condition:
-Spain won the 2026 World Cup.
+Arc uses USDC as its native gas token.
 
 Source:
-A specific article discussing the 2026 World Cup final
+A specific article discussing Arc's gas token
 ```
 
 is more useful than:
 
 ```text
 Condition:
-Spain won the 2026 World Cup.
+Arc uses USDC as its native gas token.
 
 Source:
 A generic website homepage
