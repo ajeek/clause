@@ -59,8 +59,6 @@ Arc uses USDC as its native gas token
 Source:
 https://www.arc.io/
 
-![Clause Protocol Screenshot](./public/screenshot.png)
-
 ```
 
 The condition is stored by the Clause contract.
@@ -163,8 +161,9 @@ https://www.arc.io/
 ```text
 SATISFIED
 ```
+![Clause Protocol Screenshot](./public/screenshot.png)
 
-The source contains information referring to the 2026 FIFA World Cup final and supports the condition.
+The source contains information referring to Arc using USDC as its native gas token and supports the condition.
 
 The important part is not the particular football example.
 
