@@ -165,7 +165,7 @@ SATISFIED
 
 The source contains information referring to Arc using USDC as its native gas token and supports the condition.
 
-The important part is not the particular football example.
+The important part is not the particular Arc USDC example.
 
 The same mechanism can be applied to conditions involving:
 
